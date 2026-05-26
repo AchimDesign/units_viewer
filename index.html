@@ -186,6 +186,15 @@ body{font-family:var(--font);background:var(--g05);color:var(--g100);font-size:1
 
 @media(min-width:769px) and (max-width:1100px){.sidebar{width:260px;}}
 
+
+/* Inline dims — mobile only */
+.dims-inline{display:none;font-size:14px;line-height:1.6;color:var(--g100);}
+.dims-inline strong{font-weight:600;color:var(--black);}
+
+@media(max-width:768px){
+  .detail-row--desktop{display:none;}
+  .dims-inline{display:block;}
+}
 </style>
 
 </head>
@@ -550,11 +559,13 @@ function renderList(){
 
     h+='<div class="detail-rows">';
 
-    h+='<div class="detail-row"><span class="detail-label">'+IC.moveH+' Szerokość</span><span class="detail-value">'+v.width+' mm</span></div>';
+    h+='<div class="detail-row detail-row--desktop"><span class="detail-label">'+IC.moveH+' Szerokość</span><span class="detail-value">'+v.width+' mm</span></div>';
 
-    h+='<div class="detail-row"><span class="detail-label">'+IC.moveV+' Wysokość</span><span class="detail-value">'+v.height+' mm</span></div>';
+    h+='<div class="detail-row detail-row--desktop"><span class="detail-label">'+IC.moveV+' Wysokość</span><span class="detail-value">'+v.height+' mm</span></div>';
 
-    h+='<div class="detail-row"><span class="detail-label">'+IC.moveD+' Długość</span><span class="detail-value">'+v.length+' mm</span></div>';
+    h+='<div class="detail-row detail-row--desktop"><span class="detail-label">'+IC.moveD+' Długość</span><span class="detail-value">'+v.length+' mm</span></div>';
+
+    h+='<div class="dims-inline"><strong>'+v.width+' mm</strong> szer. &times; <strong>'+v.length+' mm</strong> dł. &times; <strong>'+v.height+' mm</strong> wys.</div>';
 
     h+='</div></div>';
 
